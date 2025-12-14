@@ -1,6 +1,5 @@
 import {
   ChainNotConfiguredError,
-  type Connector,
   createConnector,
 } from '@wagmi/core'
 import { fromHex, getAddress, numberToHex, SwitchChainError } from 'viem'
@@ -30,19 +29,17 @@ function getMiniPayProvider(): MiniPayProvider | undefined {
   return undefined
 }
 
-minipay.type = 'minipay'
-
 let accountsChanged: ((accounts: string[]) => void) | undefined
 let chainChanged: ((chainId: string) => void) | undefined
 let disconnect: ((error?: Error) => void) | undefined
 
-export function minipay(): ReturnType<typeof createConnector<MiniPayProvider>> {
+export function minipay() {
   return createConnector<MiniPayProvider>((config) => ({
     id: 'minipay',
     name: 'MiniPay',
     rdns: 'com.opera.minipay',
     icon: 'https://cdn.prod.website-files.com/67a18fbe6a1b30b8c753f370/67a1bd5d25d5c9f3dfa5545a_Favicon.png',
-    type: minipay.type,
+    type: 'minipay',
 
     async connect({ chainId } = {}) {
       const provider = (await this.getProvider()) as MiniPayProvider

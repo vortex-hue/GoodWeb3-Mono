@@ -1,8 +1,26 @@
 {
-  "name": "@gooddollar/minipay-wagmi-connector",
-  "version": "0.1.0",
+  "name": "minipay-wagmi-connector",
+  "version": "2.2.5",
   "description": "Wagmi connector for MiniPay wallet",
   "license": "MIT",
+  "author": "GoodDollar",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vortex-hue/GoodWeb3-Mono.git",
+    "directory": "packages/goodsdks/gd-reown-connectors/minipay-wagmi-connectors"
+  },
+  "homepage": "https://github.com/vortex-hue/GoodWeb3-Mono/tree/feat/minipay-wagmi-connector/packages/goodsdks/gd-reown-connectors/minipay-wagmi-connectors",
+  "keywords": [
+    "wagmi",
+    "minipay",
+    "wallet",
+    "connector",
+    "ethereum",
+    "web3",
+    "celo",
+    "opera",
+    "eip-1193"
+  ],
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,7 +32,8 @@
     "clean": "rm -rf dist",
     "prebuild": "npm run clean",
     "build": "tsc",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
     "@wagmi/core": "^2.14.1",

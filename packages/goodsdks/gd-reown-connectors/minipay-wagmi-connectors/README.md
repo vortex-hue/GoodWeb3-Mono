@@ -1,13 +1,19 @@
-# @gooddollar/minipay-wagmi-connector
+# minipay-wagmi-connector
 
 A [Wagmi connector](https://wagmi.sh/) for interacting with MiniPay wallet.
+
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue)](https://github.com/vortex-hue/GoodWeb3-Mono/tree/feat/minipay-wagmi-connector/packages/goodsdks/gd-reown-connectors/minipay-wagmi-connectors)
 
 ## Installation
 
 Install and setup wagmi following the [official documentation](https://wagmi.sh/react/getting-started#manual-installation).
 
 ```bash
-yarn add @gooddollar/minipay-wagmi-connector
+npm install minipay-wagmi-connector
+# or
+yarn add minipay-wagmi-connector
+# or
+pnpm add minipay-wagmi-connector
 ```
 
 ## Usage
@@ -16,7 +22,7 @@ Connect to MiniPay wallet:
 
 ```typescript
 import { useConnect } from 'wagmi'
-import { minipay } from '@gooddollar/minipay-wagmi-connector'
+import { minipay } from 'minipay-wagmi-connector'
 
 function App() {
   const { connect } = useConnect()
